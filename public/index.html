@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Script handlebars vía CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- Script normalizr -->
+    <script src="https://cdn.jsdelivr.net/npm/normalizr@3.6.1/dist/normalizr.browser.min.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+    <div id="productsList"></div>
+
+    <article id="MessagesCenter">
+
+        <h2 class='messagesCenterTitle' style="text-align: center; margin-bottom: 10px">Centro de mensajes</h2>
+
+        <div class="userInfo">
+            <div>
+                <label class="userEmailLbl" for="userEmail">Email: </label>
+                <input class='userEmail' id='userEmail' type="email" name='userEmail' placeholder="Ingrese su email para poder enviar mensajes">
+                <label class="userEmailLbl" for="userName">Nombre: </label>
+                <input class='userEmail' id='userName' type="text" name='userName' placeholder="Ingrese su nombre" required>
+            </div>
+            <div>
+                <label class="userEmailLbl" for="userLastname">Apellido: </label>
+                <input class='userEmail' id='userLastname' type="text" name='userLastname' placeholder="Ingrese su apellido" required>
+                <label class="userEmailLbl" for="userAge">Edad: </label>
+                <input class='userEmail' id='userAge' type="number" name='userAge' placeholder="Ingrese su edad" required>
+            </div>
+            <div>
+                <label class="userEmailLbl" for="userAlias">Alias: </label>
+                <input class='userEmail' id='userAlias' type="text" name='userAlias' placeholder="Ingrese su alias" required>
+                <label class="userEmailLbl" for="userAvatar">Avatar: </label>
+                <input class='userEmail' id='userAvatar' type="url" name='userAvatar' placeholder="Ingrese link a su avatar" required>
+            </div>
+        </div>
+
+        <div id="messagesContainer">
+        </div>
+
+        <form id="messagesForm">
+            <input id='messageContent' type="text" placeholder="Ingrese su mensaje" required>
+            <button class="msgBtn" type="submit">Enviar</button>
+        </form>
+
+    </article>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

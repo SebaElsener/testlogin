@@ -1,0 +1,25 @@
+
+<h2 style="text-align: center">Listado de productos</h2>
+
+{{#if productsQty}}
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Thumbnail</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each allProducts}}
+                <tr>
+                    <td>{{this.product}}</td>
+                    <td>$ {{this.price}}</td>
+                    <td><img class='thumbnailImg' src={{this.thumbnail}} alt='imagen producto' width="60px"></td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <p class='prodsLink'>No se encontraron productos</p>
+{{/if}}
