@@ -1,26 +1,9 @@
-# Mocks y normalización
+# Login por formulario
 
-## Ruta localhost/api/productos-test
-Esta ruta genera 5 productos al azar utilizando [*faker.js*](https://fakerjs.dev/)
+Se modificó el desafío de *mocks y normalización* para agregar un login sencillo por formulario, con persistencia de session en *MongoDB*
 
-## Formato mensajes
-Se modificó el formato según la plantilla:
+## Ruta /login
+La app comienza en esta ruta, presentando el form de logueo.  Luego redirige a */home*, que renderiza index.hbs.  A través del middleware *userLoginWatcher* se controla si expiró o cerró la session, en tal caso redirige a */timeout.hbs* que muestra un mensaje y en dos segundos redirige a */login*
 
-```
-{ 
-    author: {
-        id: 'mail del usuario', 
-        nombre: 'nombre del usuario', 
-        apellido: 'apellido del usuario', 
-        edad: 'edad del usuario', 
-        alias: 'alias del usuario',
-        avatar: 'url avatar (foto, logo) del usuario'
-    },
-    text: 'mensaje del usuario'
-}
-```
-## Normalización de mensajes
-El server entrega los mensajes obtenidos desde *MongoDB Atlas* normalizados haciendo uso de [*Normalizr*](https://github.com/paularmstrong/normalizr)
-
-## Observaciones
-Se dejan en la base de datos algunos productos y mensajes a modo de prueba
+## Ruta /logout
+El cliente es redireccionado a esta ruta luego de hacer click en el botón logout, y luego de dos segundos es redirigido a */login*

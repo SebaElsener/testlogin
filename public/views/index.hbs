@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -9,10 +10,15 @@
     <script src="/socket.io/socket.io.js"></script>
     <!-- Script normalizr -->
     <script src="https://cdn.jsdelivr.net/npm/normalizr@3.6.1/dist/normalizr.browser.min.js"></script>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="../css/index.css">
 </head>
 
 <body>
+
+    <div id="userContainer">
+        <h2 class="userTitle">Bienvenido {{{user}}}</h2>
+        <button class="logoutBtn"><a class="logoutLink" href="/logout">Logout</a></button>
+    </div>
 
     <div id="productsList"></div>
 
@@ -51,7 +57,7 @@
 
     </article>
 
-    <script src="js/main.js"></script>
+    <script src="../js/main.js"></script>
 
 </body>
 

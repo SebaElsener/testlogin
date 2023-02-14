@@ -1,8 +1,8 @@
 
 import { MongoClient } from 'mongodb'
+import config from '../config.js'
 
-const url = 'mongodb+srv://mocks:mocks@cluster0.islzmfm.mongodb.net/?retryWrites=true&w=majority'
-const client = new MongoClient(url)
+const client = new MongoClient(config.mongoUrl)
 const db = client.db('mocks')
 
 class ContenedorMongoDB {

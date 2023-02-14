@@ -192,3 +192,70 @@ tbody tr:nth-child(even) {
     margin: 20px;
     font-size: 1rem;
 }
+
+.userTitle {
+    color:rgb(10, 102, 130);
+    margin: 0;
+    padding: 20px;
+}
+
+#userContainer {
+    background-color: rgba(119, 165, 240, 0.921);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#loginForm {
+    background-color: #c5dbee;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 270px;
+    border-radius: 5px;
+    padding: 25px;
+    margin: 20px;
+}
+
+.userName {
+    color: rgb(10, 102, 130);
+}
+
+.userNameInput {
+    padding: 5px;
+    width: 300px;
+    border: none;
+    font-size: 1rem;
+}
+
+.loginFromTitle {
+    color: rgb(10, 102, 130);
+}
+
+.loginBtn,
+.logoutBtn {
+    margin-top: 25px;
+    border: none;
+    font-size: 1rem;
+    padding: 7px;
+    width: 100px;
+    color: #605f5f;
+    font-weight: bold;
+    background-color: #c8c8c8;
+    transition: all .3s;
+}
+
+.logoutBtn {
+    margin-top: 0;
+    margin-right: 20px;
+}
+
+.logoutLink {
+    text-decoration: none;
+    color: #605f5f;
+}
+
+.loginBtn:hover,
+.logoutBtn:hover {
+    background-color: #ebd829;
+}

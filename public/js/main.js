@@ -88,9 +88,7 @@ const postsSchema = new normalizr.schema.Entity('posts', { mensajes: [postSchema
 // Escuchando listado mensajes enviado por el servidor
 socket.on('allMessages', data => {
     const { normalizedMessages, originalDataLength } = data
-    console.log('Normalizados:', normalizedMessages)
     const denormalizedMessages = normalizr.denormalize(normalizedMessages.result, postsSchema, normalizedMessages.entities)
-    console.log('Desnormalizados:', denormalizedMessages)
     const normalizedMessagesLength = JSON.stringify(normalizedMessages).length
     let compressionRatio
     originalDataLength === 2
