@@ -44,7 +44,7 @@ userReg.post('/register', passport.authenticate('register', {
 }))
 
 userReg.get('/failreg', (req, res) => {
-    res.render('./failreg')
+    res.render('failreg')
 })
 
 userReg.get('/successreg', (req, res) => {
