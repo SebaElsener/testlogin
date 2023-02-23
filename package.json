@@ -9,6 +9,9 @@
     "start": "babel-node server.js"
   },
   "type": "module",
+    "engines": {
+    "node": ">=14"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
