@@ -206,34 +206,39 @@ tbody tr:nth-child(even) {
     justify-content: space-between;
 }
 
-#loginForm {
+#loginForm,
+#regForm {
     background-color: #c5dbee;
     display: flex;
     flex-direction: column;
     width: 600px;
-    height: 270px;
+    height: 320px;
     border-radius: 5px;
     padding: 25px;
     margin: 20px;
 }
 
-.userName {
+.userName,
+.userPass {
     color: rgb(10, 102, 130);
 }
 
-.userNameInput {
+.userNameInput,
+.userPassInput {
     padding: 5px;
     width: 300px;
     border: none;
     font-size: 1rem;
 }
 
-.loginFromTitle {
+.loginFormTitle,
+.regFormTitle {
     color: rgb(10, 102, 130);
 }
 
 .loginBtn,
-.logoutBtn {
+.logoutBtn,
+.regBtn {
     margin-top: 25px;
     border: none;
     font-size: 1rem;
@@ -250,12 +255,34 @@ tbody tr:nth-child(even) {
     margin-right: 20px;
 }
 
-.logoutLink {
+.logoutLink,
+.loginLink,
+.regLink {
     text-decoration: none;
     color: #605f5f;
 }
 
 .loginBtn:hover,
-.logoutBtn:hover {
+.logoutBtn:hover,
+.regBtn:hover {
     background-color: #ebd829;
+}
+
+.regContainerText,
+.loginContainerText {
+    display: inline-block;
+    margin-right: 10px;
+    color: #4f4f4f;
+}
+
+.gotoRegisterContainer,
+.gotoLoginContainer {
+    margin: 20px;
+}
+
+.retryLogin,
+.gotoLogin {
+    color: rgb(10, 102, 130);
+    font-size: 1.35em;
+    margin-right: 30px;
 }

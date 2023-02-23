@@ -1,5 +1,5 @@
 {
-  "name": "mocks-y-normalizacion-07-02-23",
+  "name": "inicio-de-sesion",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -13,12 +13,15 @@
   "license": "ISC",
   "dependencies": {
     "@faker-js/faker": "^7.6.0",
+    "bcrypt": "^5.1.0",
     "connect-mongo": "^4.6.0",
     "express": "^4.18.2",
     "express-handlebars": "^6.0.7",
     "express-session": "^1.17.3",
     "mongodb": "^5.0.1",
     "normalizr": "^3.6.2",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
     "socket.io": "^4.6.0"
   }
 }

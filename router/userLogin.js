@@ -1,34 +1,54 @@
 
 import { Router } from 'express'
+import passport from 'passport'
+import { Strategy } from 'passport-local'
+import bcrypt from 'bcrypt'
+import ContenedorMongoDB from '../contenedor/contenedorMongoDB.js'
 
-
+const users = new ContenedorMongoDB('users')
 const userLogin = new Router()
+const isValidPassword = async (dbPassword, loginPassword) => {
+    return await bcrypt.compare(loginPassword, dbPassword)
+}
 
-userLogin.get('/', (req, res) => {
-    res.redirect('/login')
-})
+passport.use('login', new Strategy(
+    async (username, password, done) => {
+        const user = await users.getByUser(username)
+        if (!user) {
+            console.log('Usuario no existe')
+            return done(null, false)
+        }
+        const validPassword = await isValidPassword(user[0].password, password)
+        if (!validPassword) {
+            console.log('Clave no válida')
+            return done(null, false)
+        }
+        const userObject = {
+            user: user[0].user,
+        }
+        return done(null, userObject)
+    })
+)
 
 userLogin.get('/login', (req, res) => {
-    const userName = req.session?.user
-    if (userName) {
-        res.redirect('/home')
-    } else {
-        res.redirect('/login.html')
-    }
+    res.render('login')
 })
 
 userLogin.get('/logout', (req, res) => {
-    const userName = req.session?.user
     req.session.destroy(error => {
         !error
-            ? res.render('logout', { user: userName })
+            ? res.render('logout')
             : res.redirect('/home')
     })
 })
 
-userLogin.post('/userlogin', (req, res) => {
-    req.session.user = req.body.userName
-    res.redirect('/home')
+userLogin.post('/userlogin', passport.authenticate('login', {
+    successRedirect: '/home',
+    failureRedirect: '/faillogin'
+}))
+
+userLogin.get('/faillogin', (req, res) => {
+    res.render('faillogin')
 })
 
 export default userLogin

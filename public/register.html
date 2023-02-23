@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro usuario</title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+
+    <main>
+        
+        <form id='regForm' autocomplete="off">
+            <h2 class="regFormTitle">Registro de usuario</h2>
+            <label class="userName" for="userName">Ingrese su email</label>
+            <input id='userName' class="userNameInput" name='username' type="email" required>
+            <label class="userName" for="userName">Ingrese una contraseña</label>
+            <input id='userPass' class="userPassInput" name='password' type="password" required>
+            <button class="regBtn" type="submit" formmethod="post" formaction="/register">Enviar</button>
+        </form>
+        <div class="gotoLoginContainer">
+            <p class="loginContainerText">¿Ya estás registrado?  Ir a</p>
+            <button class="regBtn"><a class='loginLink' href="/login">Login</a></button>
+        </div>
+
+    </main>
+
+</body>
+
+</html>

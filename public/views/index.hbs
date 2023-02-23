@@ -16,7 +16,7 @@
 <body>
 
     <div id="userContainer">
-        <h2 class="userTitle">Bienvenido {{{user}}}</h2>
+        <h2 class="userTitle">Bienvenido <span class="userWelcome">{{{user}}}</span></h2>
         <button class="logoutBtn"><a class="logoutLink" href="/logout">Logout</a></button>
     </div>
 
@@ -29,7 +29,7 @@
         <div class="userInfo">
             <div>
                 <label class="userEmailLbl" for="userEmail">Email: </label>
-                <input class='userEmail' id='userEmail' type="email" name='userEmail' placeholder="Ingrese su email para poder enviar mensajes">
+                <input class='userEmail' id='userEmail' type="email" name='userEmail' placeholder="Ingrese su email para poder enviar mensajes" disabled>
                 <label class="userEmailLbl" for="userName">Nombre: </label>
                 <input class='userEmail' id='userName' type="text" name='userName' placeholder="Ingrese su nombre" required>
             </div>

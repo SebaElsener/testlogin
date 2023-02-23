@@ -1,4 +1,4 @@
 
 setTimeout(() => {
-    location.href = '/'
-}, 2000);
+    location.href = '/login'
+}, 2000)

@@ -22,8 +22,21 @@ class ContenedorMongoDB {
     async save (item) {
         try {
             await this.newCollection.insertOne(item)
+            return item
         } catch (error) {
             console.log(`Error al escribir en base de datos, ${error}`)
+        }
+    }
+
+    async getByUser (username) {
+        try {
+            const matchedUser = await this.newCollection.find({ 'user': username }).toArray()
+            if (matchedUser.length === 0) {
+                return false
+            }
+            return matchedUser
+        } catch (error) {
+            console.log(`El usuario ya existe, ${error}`)
         }
     }
 

@@ -12,6 +12,8 @@ import config from './config.js'
 import userLogin from './router/userLogin.js'
 import homeRoute from './router/homeRoute.js'
 import { engine } from 'express-handlebars'
+import passport from 'passport'
+import userReg from './router/userReg.js'
 
 const app = express()
 const httpServer = new HttpServer(app)
@@ -35,6 +37,7 @@ app.use(express.static('public'))
 app.use('/api/productos-test', testRoute)
 app.use(session({
     store: MongoStore.create({
+        dbName: 'sessions',
         mongoUrl: config.mongoUrl,
         mongoOptions: {
             useNewUrlParser: true,
@@ -45,11 +48,22 @@ app.use(session({
     saveUninitialized: false,
     rolling: true,
     cookie: {
-        // Tiempo de expiración 20 min
-        maxAge: 1.2e+6
+        // Tiempo de expiración 10 min
+        maxAge: 600000
     }
 }))
+
+passport.serializeUser((user, done) => {
+    done(null, user)
+  })
+passport.deserializeUser((user, done) => {
+    done(null, user)
+})
+
+app.use(passport.initialize())
+app.use(passport.session())
 app.use(userLogin)
+app.use(userReg)
 app.use(homeRoute)
 
 io.on('connection', async socket => {

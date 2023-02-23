@@ -34,6 +34,9 @@ const userAvatar = document.getElementById('userAvatar')
 const messageContent = document.getElementById('messageContent')
 const messagesContainer = document.getElementById('messagesContainer')
 const messagesCenterTitle = document.getElementsByClassName('messagesCenterTitle')
+const userWelcome = document.getElementsByClassName('userWelcome')
+console.log(userWelcome)
+userEmail.value = userWelcome[0].innerText
 
 //  Validaciones para campos datos usuarios
 const userDataValidations = (name, lastname, age, alias, avatar) => {
@@ -45,7 +48,7 @@ const userDataValidations = (name, lastname, age, alias, avatar) => {
 //  Envio nuevo mensaje al servidor
 messagesForm.addEventListener('submit', (e) => {
     e.preventDefault()
-    // Validando email para habilitar envío de mensajes
+    // Validando campos para habilitar envío de mensajes
     const userFieldsValidation = userDataValidations(userName.value, userLastname.value, userAge.value, userAlias.value, userAvatar.value)
     if (validateUserEmail() && userFieldsValidation){
         newMessage = {
