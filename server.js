@@ -14,11 +14,7 @@ import homeRoute from './router/homeRoute.js'
 import { engine } from 'express-handlebars'
 import passport from 'passport'
 import userReg from './router/userReg.js'
-import path from 'path'
-import {fileURLToPath} from 'url'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
 const app = express()
 const httpServer = new HttpServer(app)
 const io = new Socket(httpServer)
@@ -29,11 +25,11 @@ app.engine('hbs',
     engine({
         extname: '.hbs',
         defaultLayout: false,
-        layoutsDir: __dirname + '/views'
+        layoutsDir: '/views'
     })
 )
 app.set('view engine', 'hbs')
-app.set('views', __dirname + '/public/views')
+app.set('views', '/public/views')
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
