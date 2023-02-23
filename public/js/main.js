@@ -35,7 +35,6 @@ const messageContent = document.getElementById('messageContent')
 const messagesContainer = document.getElementById('messagesContainer')
 const messagesCenterTitle = document.getElementsByClassName('messagesCenterTitle')
 const userWelcome = document.getElementsByClassName('userWelcome')
-console.log(userWelcome)
 userEmail.value = userWelcome[0].innerText
 
 //  Validaciones para campos datos usuarios
