@@ -13,6 +13,3 @@ El cliente es redireccionado a esta ruta luego de hacer click en el botón logou
 
 ## Rutas /failreg y /faillogin
 son renderizadas en caso de fallo en registro o acceso login
-
-## Link al desafío en Github:  
-## Link al deploy:  
