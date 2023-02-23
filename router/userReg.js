@@ -31,11 +31,11 @@ passport.use('register', new Strategy({
 ))
 
 userReg.get('/', (req, res) => {
-    res.redirect('/register')
+    res.redirect('/public/register')
 })
 
 userReg.get('/register', (req, res) => {
-    res.redirect('/register.html')
+    res.redirect('/public/register.html')
 })
 
 userReg.post('/register', passport.authenticate('register', {
@@ -44,11 +44,11 @@ userReg.post('/register', passport.authenticate('register', {
 }))
 
 userReg.get('/failreg', (req, res) => {
-    res.render('failreg')
+    res.render('/views/failreg.hbs')
 })
 
 userReg.get('/successreg', (req, res) => {
-    res.render('successreg')
+    res.render('/views/successreg.hbs')
 })
 
 export default userReg
