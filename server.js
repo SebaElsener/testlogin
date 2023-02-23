@@ -33,7 +33,7 @@ app.engine('hbs',
     })
 )
 app.set('view engine', 'hbs')
-app.set('views', './public/views')
+app.set('views', __dirname + '/public/views')
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
